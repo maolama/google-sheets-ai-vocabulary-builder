@@ -106,7 +106,7 @@ function processNewWord(word, row) {
       allWordFamily += separator;
     }
 
-    const posHeader = `--- ${posData.partOfSpeech.toUpperCase()} ---`;
+    const posHeader = ``;
     
     allPartsOfSpeech += posData.partOfSpeech || '—';
     allDefinitions += `${posHeader}\n` + (posData.meanings || []).map(m => `• ${m.definition}`).join('\n');
@@ -1054,12 +1054,6 @@ function populateHyperlinks() {
   sheet.getRange(2, 17, oxfordColors.length, 1).setBackgrounds(oxfordColors);
 
   SpreadsheetApp.getUi().alert('Hyperlinks have been populated and verified for all words.');
-}
-
-
-function setApiKeys() {
-  PropertiesService.getScriptProperties().setProperty('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY');
-  Logger.log('Gemini API Key set successfully in script properties.');
 }
 
 function showReviewDialog() {
